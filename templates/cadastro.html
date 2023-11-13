@@ -9,15 +9,15 @@
 <body>
     <div class="container">
         <img src="{{url_for('static', filename='logo.jpg')}}" alt="Logo">
-        <h2>Login</h2>
+        <h2>Cadastre-se</h2>
         <form action="/fazer-cadastro" method="post">
             <input type="text" name="nome" placeholder="Nome" required>
             <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="senha" placeholder="Senha" required>
+            <input type="password" name="senha" placeholder="Senha" minlength="8" required>
             
-            <button type="submit" action="/login">Enviar</button>
+            <button type="submit" action="/login" id="button">Enviar</button>
         </form>
-        <a href="/login">Já possui uma conta? Clique aqui.</a>
+        <a href="/" id="acesso">Já possui uma conta? Clique aqui.</a>
     </div>
 </body>
 </html>

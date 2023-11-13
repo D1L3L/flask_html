@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
+
 <body>
     <div class="container">
-        <img src="{{url_for('static', filename='logo.jpg')}}" alt="Logo">
+        <img src="{{url_for('static', filename='barbershologo.jpg')}}" alt="Logo">
         <h2>Login</h2>
         <form action="/fazer-login" method="post">
             <input type="text" name="email" placeholder="Email" required>
             <input type="password" name="senha" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
+            <button type="submit" id="button">Entrar</button>
         </form>
-        <a href="/cadastro">Ainda não possui uma conta? Cadastre-se aqui.</a>
+        <a href="/cadastro" id="acesso">Cadastre-se aqui.</a>
     </div>
+    <br>
 </body>
 </html>

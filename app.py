@@ -32,11 +32,17 @@ def fazercadastro():
     email = request.form.get('email')
     senha = request.form.get('senha')
     nome = request.form.get('nome')
-    if len(senha) < 3:
-        return render_template('cadastro.html', message="Senha muito curta")
+    
     dados = str("insert into public.form(nome, email, senha) values('"+nome+"','"+email+"','"+senha+"')")
-    executa_insert(dados)  
-    return render_template('index.html')
+    con = conecta_db()
+    cursor = con.cursor()
+    cursor.execute()
+    result = cursor.fetchall(email)
+    if result:
+        executa_insert(dados)  
+        return render_template('index.html')
+    else:
+        return render_template('/erro')
 
 if __name__ == '__main__':
     app.run(debug=True)
